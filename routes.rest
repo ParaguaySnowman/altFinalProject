@@ -1,0 +1,4 @@
+//LOCAL HOST ROUTES
+
+### Get Transaction Test
+GET http://localhost:8080/transaction/1.01 HTTP/1.1
