@@ -6,7 +6,7 @@ const router = express.Router();
 const validation = require('../middleware/validate');
 
 //Controllers
-const transactionsController = require('../controllers/transaction');
+const transactionsController = require('../controllers/transactionsController');
 
 //Routes
 router.get
