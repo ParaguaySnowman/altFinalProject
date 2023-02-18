@@ -1,14 +1,14 @@
-const Transaction = require('./models/Transaction');
+const Transaction = require('../models/transactionsModel');
 
 ////////////////////////////////////////////////////////////////////////
 //TRASACTION: GET METHODS//
 ////////////////////////////////////////////////////////////////////////
 
 ///BY AMOUNT
-//handler
-async function findTransactionByAmount(req, res) {
+exports.findTransactionByAmount = async function (req, res) {
+  console.log('Amount parameter:', req.params.amount);
   try {
-    const amount = parseInt(req.params.amount);
+    const amount = parseFloat(req.params.amount);
     const transaction = await Transaction.findOne({ amount: amount });
     if (transaction) {
       res.json(transaction);
@@ -19,4 +19,4 @@ async function findTransactionByAmount(req, res) {
     console.error(error);
     res.status(500).send('Server error');
   }
-}
+};

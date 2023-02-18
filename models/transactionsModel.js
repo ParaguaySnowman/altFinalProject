@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const { Decimal128 } = mongoose;
 
 const transactionSchema = new mongoose.Schema({
   amount: {
-    type: Number,
+    type: Decimal128,
     required: true,
   },
   merchant: {
@@ -34,3 +35,4 @@ const transactionSchema = new mongoose.Schema({
 const Transaction = mongoose.model('Transaction', transactionSchema);
 
 module.exports = Transaction;
+
